@@ -5,14 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    button{
+        background-color:rgb(249, 141, 9);
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 6px;
+        gap: 20px;
+
+    }
+    button:hover{
+        background-color:rgb(0, 255, 221);
+        transform: scale(1.03);
+    }
+    body{
+        font-size: 20px;
+        text-align: center;
+        background-color: bisque;
+        font-weight: bold;
+    }
+    input{
+        font-size: 18px;
+        background-color: beige;
+    }
+</style>
 <body>
+    <h1>UPDATE</h1>
      <form action="" method="POST">
             {% csrf_token %}
             <label for="">Name</label>
             <input type="text" name="name" value="{{a.name}}">
+            <br><br>
             <label for="">Age</label>
             <input type="number" name="age" value="{{a.age}}">
+            <br><br>
             <button>Submit</button>
+            <br><br>
         </form>
     
 </body>

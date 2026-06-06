@@ -3,27 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Details</title>
 </head>
+<style>
+    button{
+    
+        background-color:rgb(249, 141, 9);
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 6px;
+        gap: 20px;
+
+    }
+    button:hover{
+        background-color:rgb(0, 255, 221);
+        transform: scale(1.03);
+    }
+    body{
+        font-size: 20px;
+        text-align: center;
+        background-color: bisque;
+        color:black;
+    }
+    input{
+        font-size: 18px;
+        background-color: beige;
+    }
+</style>
+
 <body>
-    <div>
-        <form action="" method="POST">
+    <div style="font-weight: bold;">
+        
+        
+        <h1>DETAILS</h1>
+
+        <form action="" method="POST" style="font-weight: bold;">
             {% csrf_token %}
             <label for="">Name</label>
             <input type="text" name="name">
+            <br><br>
             <label for="">Age</label>
             <input type="number" name="age">
-            <button>Submit</button>
+            <br><br>
+            <br>
+            <button> Submit</button>
         </form>
+        <br><br>
         {% for i in a %}
-            <p>{{i.name}}</p>
-            <button>
-                <a href="{% url 'delete' i.id %}">Delete</a>
-            </button>
-            <button>
-                <a href="{% url 'update' i.id %}">Update</a>
-            </button>
-            <p>{{i.age}}</p>
+            <p>Name : {{i.name}}</p>
+            <p>Age : {{i.age}}</p>
+            <div>
+                <button>
+                    <a href="{% url 'delete' i.id %}" style="text-decoration: none;">Delete</a>
+                </button>
+                <button>
+                    <a href="{% url 'update' i.id %}" style="text-decoration: none;">Update</a>
+                </button>
+            </div>
+            
         {% endfor %}
 
     </div>
